@@ -1,4 +1,4 @@
-package com.security.entity;
+package com.security.persistence.entity;
 
 public enum RoleEnum {
     ADMIN,

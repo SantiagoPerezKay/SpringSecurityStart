@@ -1,4 +1,4 @@
-package com.security.entity;
+package com.security.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -18,6 +18,7 @@ public class UserEntity {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
+
     @Column(unique = true)
     private String username;
     private String password;
@@ -27,6 +28,9 @@ public class UserEntity {
 
     @Column(name = "account_no_locked")
     private boolean accountNoLocked; /*requerido por springsecurity*/
+
+    @Column(name = "account_no_expired")
+    private boolean accountNoExpired; /*requerido por springsecurity*/
 
     @Column(name = "credential_no_expired")
     private boolean credentialNoExpired; /*requerido por springsecurity*/

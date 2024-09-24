@@ -1,4 +1,4 @@
-package com.security.entity;
+package com.security.persistence.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
@@ -24,6 +24,6 @@ public class RoleEntity {
 
     @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
     @JoinTable(name = "role_permissions", joinColumns = @JoinColumn(name = "role_id"), inverseJoinColumns = @JoinColumn(name = "permission_id"))
-    private Set<PermissionEntity> permissionEntitySet=new HashSet<>();
+    private Set<PermissionEntity> permissionList=new HashSet<>();
 
 }
